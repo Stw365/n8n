@@ -21,7 +21,27 @@
 			"dependsOn": ["n8n-nodes-base#build", "@n8n/n8n-nodes-langchain#build"]
 		},
 		"build": {
-			"dependsOn": ["^build"],
+			"dependsOn": [],
+			"outputs": ["dist/**"]
+		},
+		"build:cli": {
+			"dependsOn": ["@n8n/cli#build"],
+			"outputs": ["dist/**"]
+		},
+		"build:core": {
+			"dependsOn": ["@n8n/core#build"],
+			"outputs": ["dist/**"]
+		},
+		"build:nodes-base": {
+			"dependsOn": ["@n8n/nodes-base#build"],
+			"outputs": ["dist/**"]
+		},
+		"build:workflow": {
+			"dependsOn": ["@n8n/workflow#build"],
+			"outputs": ["dist/**"]
+		},
+		"build:editor-ui": {
+			"dependsOn": ["n8n-editor-ui#build"],
 			"outputs": ["dist/**"]
 		},
 		"typecheck": {
@@ -31,7 +51,6 @@
 		"format:check": {},
 		"lint:backend": {
 			"dependsOn": [
-				"^build",
 				"@n8n/api-types#lint",
 				"@n8n/config#lint",
 				"@n8n/decorators#lint",
@@ -52,7 +71,6 @@
 		},
 		"lint:frontend": {
 			"dependsOn": [
-				"^build",
 				"@n8n/chat#lint",
 				"@n8n/codemirror-lang#lint",
 				"@n8n/storybook#lint",
@@ -64,7 +82,6 @@
 		},
 		"lint:nodes": {
 			"dependsOn": [
-				"^build",
 				"n8n-nodes-base#lint",
 				"@n8n/n8n-nodes-langchain#lint",
 				"@n8n/json-schema-to-zod#lint"

@@ -9,11 +9,11 @@
   "packageManager": "yarn@3.6.0",
   "scripts": {
     "prepare": "node scripts/prepare.mjs",
-    "build": "turbo run build",
+    "build": "turbo run build:cli build:core build:nodes-base build:workflow build:editor-ui",
     "build:backend": "turbo run build:backend",
     "build:frontend": "turbo run build:frontend",
     "build:nodes": "turbo run build:nodes",
-    "typecheck": "turbo typecheck",
+    "typecheck": "turbo run typecheck",
     "dev": "turbo run dev --parallel --env-mode=loose --filter=!@n8n/design-system --filter=!@n8n/chat --filter=!@n8n/task-runner",
     "dev:be": "turbo run dev --parallel --env-mode=loose --filter=!@n8n/design-system --filter=!@n8n/chat --filter=!@n8n/task-runner --filter=!n8n-editor-ui",
     "dev:ai": "turbo run dev --parallel --env-mode=loose --filter=@n8n/nodes-langchain --filter=n8n --filter=n8n-core",
