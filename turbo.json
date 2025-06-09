@@ -24,10 +24,6 @@
 			"dependsOn": [],
 			"outputs": ["dist/**"]
 		},
-		"build:cli": {
-			"dependsOn": ["@n8n/cli#build"],
-			"outputs": ["dist/**"]
-		},
 		"build:core": {
 			"dependsOn": ["@n8n/core#build"],
 			"outputs": ["dist/**"]
